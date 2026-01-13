@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -35,7 +34,6 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Лого и описание */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
@@ -57,7 +55,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Ссылки */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <h3 className="text-lg font-semibold mb-4">{category}</h3>
@@ -77,10 +74,8 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Разделительная линия */}
         <div className="border-t border-gray-800 my-8"></div>
 
-        {/* Нижняя часть */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
             © {currentYear} CompanyName. Все права защищены.
@@ -105,7 +100,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Юридическая информация */}
         <div className="mt-8 pt-8 border-t border-gray-800">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-400">
             <div>

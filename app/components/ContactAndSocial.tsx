@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
   EnvelopeIcon, 
   PhoneIcon, 
@@ -55,7 +54,6 @@ const ContactAndSocial = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Контактная информация */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Контактные данные</h3>
             
@@ -76,7 +74,6 @@ const ContactAndSocial = () => {
               ))}
             </div>
 
-            {/* Социальные сети */}
             <div className="mt-12">
               <h4 className="text-xl font-semibold text-gray-900 mb-6">Мы в социальных сетях</h4>
               <div className="flex flex-wrap gap-4">
@@ -94,7 +91,6 @@ const ContactAndSocial = () => {
             </div>
           </div>
 
-          {/* Форма обратной связи */}
           <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-1">
             <div className="bg-white rounded-xl p-8 h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Быстрый запрос</h3>
@@ -129,7 +125,6 @@ const ContactAndSocial = () => {
                 </button>
               </form>
 
-              {/* Карта (заглушка) */}
               <div className="mt-8">
                 <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <div className="text-center">
@@ -142,7 +137,6 @@ const ContactAndSocial = () => {
           </div>
         </div>
 
-        {/* Информация о компании */}
         <div className="mt-16 max-w-4xl mx-auto text-center">
           <div className="bg-gray-50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">О компании</h3>

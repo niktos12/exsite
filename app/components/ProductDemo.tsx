@@ -1,4 +1,3 @@
-import React from 'react';
 import { PlayCircleIcon } from '@heroicons/react/24/outline';
 
 const ProductDemo = () => {
