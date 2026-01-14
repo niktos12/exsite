@@ -187,7 +187,7 @@ const Header = () => {
                       <User className="h-4 w-4" />
                       Войти
                     </Button>
-                    <Button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
+                    <Button className="w-full text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
                       Начать бесплатно
                     </Button>
                   </div>
