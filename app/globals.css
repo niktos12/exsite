@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+@theme {
+  --color-border: var(--border);
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
