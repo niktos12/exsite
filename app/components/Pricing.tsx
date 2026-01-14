@@ -108,7 +108,7 @@ const Pricing = () => {
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-1">
+                  <Badge className="text-white bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-1">
                     Самый популярный
                   </Badge>
                 </div>
@@ -153,7 +153,7 @@ const Pricing = () => {
                 <Button
                   className={`w-full ${
                     plan.popular
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700'
+                      ? 'text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700'
                       : ''
                   }`}
                   variant={plan.popular ? "default" : "outline"}

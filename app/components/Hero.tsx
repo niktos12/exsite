@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button 
               size="lg" 
-              className="group gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 px-8 hover:from-indigo-700 hover:to-purple-700"
+              className="group gap-2  text-white bg-gradient-to-r from-indigo-600 to-purple-600 px-8 hover:from-indigo-700 hover:to-purple-700"
             >
               Начать бесплатно
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

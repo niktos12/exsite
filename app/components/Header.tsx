@@ -89,7 +89,7 @@ const Header = () => {
                     <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
+                <DropdownMenuContent className="w-56 bg-white">
                   <DropdownMenuLabel>Функции продукта</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   {productFeatures.map((feature) => (
@@ -121,7 +121,7 @@ const Header = () => {
                     <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-48">
+                <DropdownMenuContent className="w-48 bg-white">
                   <DropdownMenuItem>Документация</DropdownMenuItem>
                   <DropdownMenuItem>Блог</DropdownMenuItem>
                   <DropdownMenuItem>Веб-семинары</DropdownMenuItem>
@@ -143,7 +143,7 @@ const Header = () => {
               Войти
             </Button>
 
-            <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
+            <Button className="bg-gradient-to-r text-white from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
               Начать бесплатно
             </Button>
           </div>
