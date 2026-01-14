@@ -3,7 +3,7 @@
 @theme {
   --color-border: var(--border);
   --color-background: var(--background)
-  --color-foreground: var(--color-foreground)
+  --color-foreground: var(--foreground)
 }
 @layer base {
   :root {
