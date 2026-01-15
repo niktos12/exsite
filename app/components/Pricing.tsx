@@ -1,12 +1,19 @@
-"use client"
-import { useState } from 'react';
-import { Check, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Switch } from '@/components/ui/switch';
-import { Label } from '@/components/ui/label';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+"use client";
+import { useState } from "react";
+import { Check, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
@@ -66,7 +73,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-20">
+    <section id="pricing" className="py-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -75,13 +82,14 @@ const Pricing = () => {
           <p className="mb-8 text-xl text-muted-foreground">
             Выберите план, который идеально подходит для вашего бизнеса
           </p>
-          
+
           <div className="mb-12 flex items-center justify-center gap-4">
             <Label htmlFor="billing-period" className="text-lg font-medium">
               Ежемесячно
             </Label>
             <Switch
               id="billing-period"
+              className={`${isYearly ? "bg-green-500" : "text-white"}`}
               checked={isYearly}
               onCheckedChange={setIsYearly}
             />
@@ -102,8 +110,8 @@ const Pricing = () => {
               key={plan.name}
               className={`relative ${
                 plan.popular
-                  ? 'border-indigo-300 shadow-xl shadow-indigo-100 dark:shadow-indigo-900/20'
-                  : ''
+                  ? "border-indigo-300 shadow-xl shadow-indigo-100 dark:shadow-indigo-900/20"
+                  : ""
               }`}
             >
               {plan.popular && (
@@ -113,7 +121,7 @@ const Pricing = () => {
                   </Badge>
                 </div>
               )}
-              
+
               <CardHeader>
                 <CardTitle className="text-2xl">{plan.name}</CardTitle>
                 <CardDescription>{plan.description}</CardDescription>
@@ -121,17 +129,28 @@ const Pricing = () => {
                   <div className="text-4xl font-bold">
                     {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                     <span className="text-lg font-normal text-muted-foreground">
-                      {plan.monthlyPrice === "₽0" ? " навсегда" : isYearly ? "/год" : "/мес"}
+                      {plan.monthlyPrice === "₽0"
+                        ? " навсегда"
+                        : isYearly
+                        ? "/год"
+                        : "/мес"}
                     </span>
                   </div>
                   {plan.monthlyPrice !== "₽0" && isYearly && (
                     <div className="text-sm text-green-600">
-                      Экономия ₽{(parseInt(plan.monthlyPrice.replace('₽', '').replace(' ', '')) * 12 * 0.2).toLocaleString('ru-RU')}
+                      Экономия ₽
+                      {(
+                        parseInt(
+                          plan.monthlyPrice.replace("₽", "").replace(" ", "")
+                        ) *
+                        12 *
+                        0.2
+                      ).toLocaleString("ru-RU")}
                     </div>
                   )}
                 </div>
               </CardHeader>
-              
+
               <CardContent>
                 <ul className="space-y-3">
                   {plan.features.map((feature, index) => (
@@ -141,20 +160,24 @@ const Pricing = () => {
                       ) : (
                         <X className="mr-3 h-5 w-5 text-muted-foreground" />
                       )}
-                      <span className={feature.included ? "" : "text-muted-foreground"}>
+                      <span
+                        className={
+                          feature.included ? "" : "text-muted-foreground"
+                        }
+                      >
                         {feature.text}
                       </span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
-              
+
               <CardFooter>
                 <Button
                   className={`w-full ${
                     plan.popular
-                      ? 'text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700'
-                      : ''
+                      ? "text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700"
+                      : ""
                   }`}
                   variant={plan.popular ? "default" : "outline"}
                 >
@@ -173,12 +196,18 @@ const Pricing = () => {
             </TabsList>
             <TabsContent value="faq" className="space-y-4 pt-4 text-left">
               <div>
-                <h4 className="font-semibold">Можно ли изменить тариф позже?</h4>
-                <p className="text-muted-foreground">Да, вы можете изменить тариф в любое время в личном кабинете.</p>
+                <h4 className="font-semibold">
+                  Можно ли изменить тариф позже?
+                </h4>
+                <p className="text-muted-foreground">
+                  Да, вы можете изменить тариф в любое время в личном кабинете.
+                </p>
               </div>
               <div>
                 <h4 className="font-semibold">Есть ли плата за отмену?</h4>
-                <p className="text-muted-foreground">Нет, отмена подписки бесплатна в любое время.</p>
+                <p className="text-muted-foreground">
+                  Нет, отмена подписки бесплатна в любое время.
+                </p>
               </div>
             </TabsContent>
             <TabsContent value="compare" className="pt-4">

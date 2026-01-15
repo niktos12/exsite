@@ -6,10 +6,15 @@ import {
   ChevronDown,
   Search,
   User,
-  Rocket,
-  Zap,
-  Shield,
-  BarChart,
+  Home,
+  CheckCircle,
+  Users,
+  PlayCircle,
+  Award,
+  CreditCard,
+  MessageSquare,
+  Phone,
+  HelpCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,20 +32,38 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navigationItems = [
-    { name: "Продукт", href: "#product", icon: <Rocket className="w-4 h-4" /> },
-    { name: "Решения", href: "#solutions", icon: <Zap className="w-4 h-4" /> },
-    { name: "Цены", href: "#pricing", icon: <BarChart className="w-4 h-4" /> },
+    { name: "Главная", href: "#hero", icon: <Home className="w-4 h-4" /> },
     {
-      name: "Ресурсы",
-      href: "#resources",
-      icon: <Shield className="w-4 h-4" />,
+      name: "Преимущества",
+      href: "#benefits",
+      icon: <CheckCircle className="w-4 h-4" />,
     },
+    {
+      name: "Нам доверяют",
+      href: "#trust",
+      icon: <Users className="w-4 h-4" />,
+    },
+    { name: "Демо", href: "#demo", icon: <PlayCircle className="w-4 h-4" /> },
+    { name: "Факты", href: "#facts", icon: <Award className="w-4 h-4" /> },
+    {
+      name: "Цены",
+      href: "#pricing",
+      icon: <CreditCard className="w-4 h-4" />,
+    },
+    {
+      name: "Форма",
+      href: "#form",
+      icon: <MessageSquare className="w-4 h-4" />,
+    },
+    { name: "Контакты", href: "#contact", icon: <Phone className="w-4 h-4" /> },
+    { name: "FAQ", href: "#faq", icon: <HelpCircle className="w-4 h-4" /> },
   ];
 
   const productFeatures = [
@@ -49,6 +72,26 @@ const Header = () => {
     { name: "Интеграции", description: "50+ сервисов" },
     { name: "Безопасность", description: "Уровень банка" },
   ];
+
+  const scrollToSection = (href: string) => {
+    const id = href.replace("#", "");
+    const element = document.getElementById(id);
+    if (element) {
+      const headerHeight = 80; 
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleMobileAnchorClick = (href: string) => {
+    scrollToSection(href);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -155,7 +198,7 @@ const Header = () => {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[100vw] p-4 sm:w-[400px]">
+              <SheetContent side="right" className="w-[100vw] p-3 sm:w-[400px]">
                 <SheetHeader>
                   <SheetTitle>Меню</SheetTitle>
                 </SheetHeader>
@@ -165,17 +208,16 @@ const Header = () => {
                       Навигация
                     </h3>
                     {navigationItems.map((item) => (
-                      <Button
-                        key={item.name}
-                        variant="ghost"
-                        className="w-full justify-start gap-2"
-                        asChild
-                      >
-                        <Link href={item.href}>
+                      <SheetClose asChild key={item.name}>
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start gap-2"
+                          onClick={() => handleMobileAnchorClick(item.href)}
+                        >
                           {item.icon}
                           {item.name}
-                        </Link>
-                      </Button>
+                        </Button>
+                      </SheetClose>
                     ))}
                   </div>
 
@@ -187,9 +229,11 @@ const Header = () => {
                       <User className="h-4 w-4" />
                       Войти
                     </Button>
-                    <Button className="w-full text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
-                      Начать бесплатно
-                    </Button>
+                    <SheetClose asChild>
+                      <Button className="w-full text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
+                        Начать бесплатно
+                      </Button>
+                    </SheetClose>
                   </div>
 
                   <div className="pt-6 border-t">

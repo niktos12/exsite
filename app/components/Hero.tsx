@@ -4,12 +4,12 @@ import { Badge } from '@/components/ui/badge';
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50 pt-8 md:pt-12">
+    <section id='hero' className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50 pt-8 md:pt-12">
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
       <div className="absolute top-0 left-1/4 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-200/30 blur-3xl" />
       <div className="absolute bottom-0 right-1/4 h-72 w-72 translate-x-1/2 translate-y-1/2 rounded-full bg-purple-200/30 blur-3xl" />
       
-      <div className="relative container mx-auto px-4 py-20 md:py-32">
+      <div className="relative container mx-auto px-4 py-20 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <Badge 
             variant="outline" 
